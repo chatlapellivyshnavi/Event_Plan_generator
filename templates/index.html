@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        AI Event Plan Generator
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <!-- ================================================= -->
+    <!-- HERO SECTION -->
+    <!-- ================================================= -->
+
+    <div class="hero">
+
+        <div class="hero-icon">
+            🎉
+        </div>
+
+        <h1>
+            AI Event Plan Generator
+        </h1>
+
+        <p>
+            Plan smarter. Celebrate better. ✨
+        </p>
+
+        <span>
+            Your intelligent AI-powered event planning assistant
+        </span>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- EVENT FORM -->
+    <!-- ================================================= -->
+
+    <div class="card">
+
+        <h2>
+            🎯 Tell Us About Your Event
+        </h2>
+
+
+        <form
+            method="POST"
+            action="/generate"
+        >
+
+
+            <!-- EVENT TYPE -->
+
+            <label>
+                🎉 Event Type
+            </label>
+
+            <select
+                name="event_type"
+                required
+            >
+
+                <option value="">
+                    Select Event Type
+                </option>
+
+                <option value="Birthday">
+                    Birthday
+                </option>
+
+                <option value="Wedding">
+                    Wedding
+                </option>
+
+                <option value="College Fest">
+                    College Fest
+                </option>
+
+                <option value="Seminar">
+                    Seminar
+                </option>
+
+                <option value="Workshop">
+                    Workshop
+                </option>
+
+                <option value="Corporate Event">
+                    Corporate Event
+                </option>
+
+                <option value="Farewell">
+                    Farewell
+                </option>
+
+                <option value="Baby Shower">
+                    Baby Shower
+                </option>
+
+                <option value="Cultural Event">
+                    Cultural Event
+                </option>
+
+                <option value="Other">
+                    Other
+                </option>
+
+            </select>
+
+
+            <!-- EVENT NAME -->
+
+            <label>
+                📝 Event Name
+            </label>
+
+            <input
+                type="text"
+                name="event_name"
+                placeholder="Example: Espraza 2K26"
+                required
+            >
+
+
+            <!-- GUESTS -->
+
+            <label>
+                👥 Number of Guests
+            </label>
+
+            <input
+                type="number"
+                name="guests"
+                placeholder="Example: 100"
+                min="1"
+                required
+            >
+
+
+            <!-- DATE -->
+
+            <label>
+                📅 Event Date
+            </label>
+
+            <input
+                type="date"
+                name="date"
+                required
+            >
+
+
+            <!-- LOCATION -->
+
+            <label>
+                📍 Location
+            </label>
+
+            <input
+                type="text"
+                name="location"
+                placeholder="Example: Hyderabad"
+                required
+            >
+
+
+            <!-- BUDGET -->
+
+            <label>
+                💰 Budget (₹)
+            </label>
+
+            <input
+                type="number"
+                name="budget"
+                placeholder="Example: 50000"
+                min="1"
+                required
+            >
+
+
+            <!-- THEME -->
+
+            <label>
+                🌈 Event Theme
+            </label>
+
+            <input
+                type="text"
+                name="theme"
+                placeholder="Example: Modern, Floral, Retro"
+            >
+
+
+            <!-- FOOD -->
+
+            <label>
+                🍽️ Food Preference
+            </label>
+
+            <select name="food">
+
+                <option value="Vegetarian">
+                    Vegetarian
+                </option>
+
+                <option value="Non-Vegetarian">
+                    Non-Vegetarian
+                </option>
+
+                <option value="Both">
+                    Both
+                </option>
+
+            </select>
+
+
+            <!-- ENTERTAINMENT -->
+
+            <label>
+                🎵 Entertainment
+            </label>
+
+            <input
+                type="text"
+                name="entertainment"
+                placeholder="Example: DJ, Dance, Games, Music"
+            >
+
+
+            <!-- DESCRIPTION -->
+
+            <label>
+                💭 Describe Your Event
+            </label>
+
+            <textarea
+                name="description"
+                placeholder="Describe your event requirements, special ideas and expectations..."
+            ></textarea>
+
+
+            <!-- BUTTON -->
+
+            <button
+                type="submit"
+                class="generate-btn"
+            >
+
+                ✨ Generate My Event Plan
+
+            </button>
+
+
+        </form>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- FOOTER -->
+    <!-- ================================================= -->
+
+    <div class="footer">
+
+        🤖 Powered by Python + Flask + Ollama + Llama 3.2
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>
